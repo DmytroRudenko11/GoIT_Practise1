@@ -1,2 +1,7 @@
-export const LOGIN = "LOGIN";
-export const LOGOUT = "LOGOUT";
+export const LOGIN_PENDING = 'LOGIN_PENDING';
+export const LOGIN_FULLFILLED = 'LOGIN_FULLFILLED';
+export const LOGIN_REJECTED = 'LOGIN_REJECTED';
+
+export const LOGOUT_PENDING = 'LOGOUT_PENDING';
+export const LOGOUT_FULLFILLED = 'LOGOUT_FULLFILLED';
+export const LOGOUT_REJECTED = 'LOGOUT_REJECTED';

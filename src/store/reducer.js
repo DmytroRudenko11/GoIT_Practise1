@@ -1,20 +1,25 @@
-import { createReducer } from "@reduxjs/toolkit";
-import { LOGIN, LOGOUT } from "./types";
+import { createReducer } from '@reduxjs/toolkit';
+import * as actions from './types';
 
 const initialState = {
   authToken: null,
 };
 export const authReducer = createReducer(initialState, {
-  [LOGIN]: (state, action) => {
+  [actions.LOGIN_PENDING]: (state, action) => state,
+  [actions.LOGIN_FULLFILLED]: (state, action) => {
     return {
       ...state,
       authToken: action.payload,
     };
   },
-  [LOGOUT]: (state, action) => {
+  [actions.LOGIN_REJECTED]: (state, action) => state,
+
+  [actions.LOGOUT_PENDING]: (state, action) => state,
+  [actions.LOGOUT_FULLFILLED]: (state, action) => {
     return {
       ...state,
-      authToken: action.payload,
+      authToken: null,
     };
   },
+  [actions.LOGOUT_REJECTED]: (state, action) => state,
 });
