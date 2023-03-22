@@ -1,1 +1,3 @@
-# Module 7 Lesson 1 \_ 1
+# Module 7 Lesson 1 \_ 2
+
+Redux async operation with createAsyncThunk

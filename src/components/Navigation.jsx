@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { logoutInSuccess } from '../store/actions';
+import { logoutOperation } from '../store/operation';
 
 const StyledLink = styled(NavLink)`
   color: black;
@@ -15,7 +15,7 @@ export default function Navigaion() {
   const authToken = useSelector(state => state.auth.authToken);
   const dispatch = useDispatch();
   const logout = () => {
-    dispatch(logoutInSuccess());
+    dispatch(logoutOperation());
   };
 
   return (
