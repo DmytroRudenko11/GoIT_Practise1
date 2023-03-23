@@ -27,3 +27,19 @@
 .mla {
   margin-left: auto;
 }
+
+.filter{
+  display: block;
+  margin: 50px auto;
+  max-width: 300px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.filter input{
+  margin: 5px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #000;
+}

@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectProducts } from '../store/products/selector';
-import { getProductsOperation } from '../store/products/operations';
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { selectProducts } from "../store/products/selector";
+import { getProductsOperation } from "../store/products/operations";
+import Filter from "./Filter";
 
 export default function Products() {
   const products = useSelector(selectProducts);
@@ -13,15 +14,18 @@ export default function Products() {
   }, []);
 
   return (
-    <ul>
-      {products.map((product) => (
-        <li key={product.id}>
-          <h3>{product.name}</h3>
-          <p>Price: {product.price}</p>
-          <p>Stock: {product.stock}</p>
-          <p>{product.description}</p>
-        </li>
-      ))}
-    </ul>
+    <>
+      <Filter />
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            <h3>{product.name}</h3>
+            <p>Price: {product.price}</p>
+            <p>Stock: {product.stock}</p>
+            <p>{product.description}</p>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
