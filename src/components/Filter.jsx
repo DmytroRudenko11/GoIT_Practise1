@@ -1,9 +1,6 @@
-// import { useEffect } from "react";
-// import { Outlet } from "react-router-dom";
-// import Navigaion from "./Navigation";
-import { useDispatch, useSelector } from "react-redux";
-import { setFilter } from "../store/products/index.js";
-import { selectFilter } from "../store/products/selector.js";
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter } from '../store/products/index.js';
+import { selectFilter } from '../store/products/selector.js';
 
 export default function Filter() {
   const filter = useSelector(selectFilter);
@@ -13,11 +10,7 @@ export default function Filter() {
     <>
       <label className="filter">
         Filter
-        <input
-          name="filter"
-          value={filter}
-          onChange={(e) => dispatch(setFilter(e.target.value))}
-        />
+        <input name="filter" value={filter} onChange={(e) => dispatch(setFilter(e.target.value))} />
       </label>
     </>
   );

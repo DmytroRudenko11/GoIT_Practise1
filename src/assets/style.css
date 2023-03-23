@@ -28,7 +28,7 @@
   margin-left: auto;
 }
 
-.filter{
+.filter {
   display: block;
   margin: 50px auto;
   max-width: 300px;
@@ -37,9 +37,52 @@
   border-radius: 5px;
 }
 
-.filter input{
+.filter input {
   margin: 5px;
   outline: none;
   border: none;
   border-bottom: 1px solid #000;
+}
+
+.card-list {
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 25px;
+}
+
+.card-item {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 1px 1px 5px 2px grey;
+}
+
+.card-title {
+  font-size: 16px;
+}
+
+.card-price {
+  font-size: 20px;
+}
+
+.card-stock {
+  font-size: 12px;
+}
+
+.card-description {
+  font-size: 12px;
+}
+
+.card-btn {
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background-color: rgb(131, 37, 37);
+  color: white;
+  margin-top: 10px;
 }
