@@ -1,28 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { httpServer } from '../api/index';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectProducts } from '../store/products/selector';
+import { getProductsOperation } from '../store/products/operations';
 
 export default function Products() {
-  const authToken = useSelector(state => state.auth.authToken);
-  const [products, setProducts] = useState([]);
+  const products = useSelector(selectProducts);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    async function fetch() {
-      try {
-        const response = await httpServer.get('/product/all', {
-          headers: { Authorization: authToken },
-        });
-        setProducts(response.data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    authToken && fetch();
+    dispatch(getProductsOperation());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <ul>
-      {products.map(product => (
+      {products.map((product) => (
         <li key={product.id}>
           <h3>{product.name}</h3>
           <p>Price: {product.price}</p>
