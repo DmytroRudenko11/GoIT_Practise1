@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { useDispatch } from 'react-redux';
-import { loginOperation } from '../store/operation';
+import { loginOperation } from '../store/auth/operations';
 
 export default function Login() {
   const [login, setLogin] = useState('');
@@ -10,9 +9,8 @@ export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-
     dispatch(
       loginOperation({
         login,
@@ -34,7 +32,7 @@ export default function Login() {
           name="login"
           className="input"
           defaultValue={login}
-          onChange={e => setLogin(e.target.value)}
+          onChange={(e) => setLogin(e.target.value)}
         />
         <label htmlFor="password" className="label">
           Password
@@ -44,13 +42,9 @@ export default function Login() {
           name="password"
           className="input"
           defaultValue={password}
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <button
-          type="button"
-          className="btn__submit"
-          onClick={e => handleSubmit(e)}
-        >
+        <button type="button" className="btn__submit" onClick={(e) => handleSubmit(e)}>
           Send
         </button>
       </form>
