@@ -10,6 +10,11 @@ const initialState = {
 const authSlice = createSlice({
   name: NAME,
   initialState: initialState,
+  reducers: {
+    setAuthToken(state, action) {
+      state.authToken = action.payload
+    }
+  },
 
   extraReducers: {
     [loginOperation.pending](state, action) {},
@@ -27,4 +32,4 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-export const { userLogin, userLogout } = authSlice.actions;
+export const { setAuthToken } = authSlice.actions;
