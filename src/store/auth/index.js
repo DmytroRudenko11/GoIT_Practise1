@@ -10,12 +10,6 @@ const initialState = {
 const authSlice = createSlice({
   name: NAME,
   initialState: initialState,
-  reducers: {
-    setAuthToken(state, action) {
-      state.authToken = action.payload
-    }
-  },
-
   extraReducers: {
     [loginOperation.pending](state, action) {},
     [loginOperation.fulfilled](state, action) {
